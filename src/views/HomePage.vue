@@ -2,10 +2,25 @@
   <div class="home">
     <h1>Welcome to Travel Explorer</h1>
     <p>Discover the best hotels and travel experiences!</p>
-    <router-link to="/hotels" class="btn">View Hotel Listings</router-link>
+    <router-link @click="viewhotels" to="/hotels" class="btn">View Hotel Listings</router-link>
   </div>
 </template>
-
+<script>
+export default {
+  name:"HomePage",
+  methods:{
+    viewHotels() {
+      const isAuthenticated = false; // Simulate authentication check
+      if (isAuthenticated) {
+        this.$router.push("/hotels");
+      } else {
+        alert("Please login to view hotel listings.");
+        this.$router.push("/login");
+      }
+    }
+  },
+};
+</script>
 <style scoped>
 .home {
   text-align: center;

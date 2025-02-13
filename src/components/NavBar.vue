@@ -6,6 +6,15 @@
           <li><router-link to="/">Home</router-link></li>
           <li><router-link to="/hotels">Hotels</router-link></li>
           <li><router-link to="/about">About Us</router-link></li>
+          <li v-if="!isAuthenticated">
+          <router-link to="/login">Login</router-link>
+          </li>
+          <li v-if="!isAuthenticated">
+          <router-link to="/register">Register</router-link>
+          </li>
+          <li v-if="isAuthenticated">
+          <button @click="logout">Logout</button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -14,6 +23,18 @@
   <script>
   export default {
     name: "NavBar",
+    data(){
+      return {
+        isAuthenticated: false,
+      };
+    },
+    methods: {
+    logout() {
+      this.isAuthenticated = false;
+      alert("Logged out successfully!");
+      this.$router.push("/");
+    }
+    },
   };
   </script>
   
