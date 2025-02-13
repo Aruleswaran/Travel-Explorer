@@ -1,0 +1,52 @@
+🔍 Requirement Gathering for Travel Application
+📌 Overview:
+The Travel Application will help tourists check hotel listings, choose customized packages, and access personalized amenities.
+ Users need to log in or register to access certain features like viewing hotel prices, booking hotels, and customizing their packages.
+
+📄 Functional Requirements
+1️⃣ User Authentication (Login & Register)
+Login Page:
+
+Email and password fields with validation.
+"Forgot Password" option.
+Display error messages for invalid credentials.
+Register Page:
+
+Full name, email, password, and confirm password fields.
+Password strength indicator and validation (minimum 8 characters, one uppercase, one special character).
+Check for existing email during registration.
+Success message after successful registration.
+Access Restriction:
+
+Unauthenticated users cannot access hotel prices, booking options, or personalization features.
+Redirect them to the Login Page when they click on restricted features.
+2️⃣ HomePage Features
+Navigation Bar (Visible on all pages):
+Links to Home, Hotels, About Us, and Contact Us.
+Login/Register button (changes to "Logout" after login).
+Hero Section: Eye-catching banner introducing the app.
+Explore Hotels: Preview with “View More” button, prompting users to log in if not authenticated.
+3️⃣ Hotel Listings
+Display hotel details (name, rating, location, and basic description).
+Filter and Sort Options: Price, Location, and Star Rating.
+Clicking "View Price" or "Book Now" redirects to the login page if the user isn’t logged in.
+4️⃣ User Dashboard (After Login)
+Access to personalized travel options, previous bookings, and package customization.
+Profile management (edit name, email, and password).
+5️⃣ Booking System
+Display personalized package options after login.
+Users can select dates, room type, and additional amenities.
+Price calculation and booking confirmation page.
+6️⃣ Personalization Feature
+Curated amenities and wardrobe options based on the destination and travel type (formal, casual, adventure, etc.).
+📄 Non-Functional Requirements
+Performance: Fast response time for listing hotels and loading pages.
+Security: Ensure secure login with password encryption.
+Scalability: Able to handle increased traffic and additional features in the future.
+User Experience: Simple and intuitive UI for seamless navigation.
+🛠️ Tech Stack
+Frontend: Vue.js (for building the UI)
+Backend: Node.js + Express.js (for handling authentication and APIs)
+Database: MongoDB (to store user data, hotel details, and bookings)
+Authentication: JWT (JSON Web Tokens) for secure session management
+Hosting: Netlify (for the frontend) and Heroku or Render (for the backend)
